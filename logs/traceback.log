@@ -1,0 +1,1029 @@
+10/Nov/2022 16:54:28 [Thread-2:18796] [django.request:222] [ERROR]- Internal Server Error: /admin/users/users/add/
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "users" 不存在
+LINE 1: INSERT INTO "users" ("first_name", "last_name", "gender", "e...
+                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 604, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1637, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1525, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1564, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1091, in save_model
+    obj.save()
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\apiview\model.py", line 231, in save
+    super(BaseModel, self).save(force_insert=force_insert,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 717, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 868, in _do_insert
+    return manager._insert([self], fields=fields, return_id=update_pk,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "users" 不存在
+LINE 1: INSERT INTO "users" ("first_name", "last_name", "gender", "e...
+                    ^
+
+10/Nov/2022 16:55:43 [Thread-2:18796] [django.request:222] [ERROR]- Internal Server Error: /admin/users/users/add/
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "users" 不存在
+LINE 1: INSERT INTO "users" ("first_name", "last_name", "gender", "e...
+                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 604, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1637, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1525, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1564, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1091, in save_model
+    obj.save()
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\apiview\model.py", line 231, in save
+    super(BaseModel, self).save(force_insert=force_insert,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 717, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 868, in _do_insert
+    return manager._insert([self], fields=fields, return_id=update_pk,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "users" 不存在
+LINE 1: INSERT INTO "users" ("first_name", "last_name", "gender", "e...
+                    ^
+
+10/Nov/2022 16:56:28 [Thread-8:18184] [django.request:222] [ERROR]- Internal Server Error: /admin/users/users/add/
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "users" 不存在
+LINE 1: INSERT INTO "users" ("first_name", "last_name", "gender", "e...
+                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 604, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1637, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1525, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1564, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1091, in save_model
+    obj.save()
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\apiview\model.py", line 231, in save
+    super(BaseModel, self).save(force_insert=force_insert,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 717, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 868, in _do_insert
+    return manager._insert([self], fields=fields, return_id=update_pk,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "users" 不存在
+LINE 1: INSERT INTO "users" ("first_name", "last_name", "gender", "e...
+                    ^
+
+10/Nov/2022 16:58:22 [Thread-2:16044] [django.request:222] [ERROR]- Internal Server Error: /admin/users/users/add/
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "users" 不存在
+LINE 1: INSERT INTO "users" ("first_name", "last_name", "gender", "e...
+                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 604, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1637, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1525, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1564, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1091, in save_model
+    obj.save()
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\apiview\model.py", line 231, in save
+    super(BaseModel, self).save(force_insert=force_insert,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 717, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 868, in _do_insert
+    return manager._insert([self], fields=fields, return_id=update_pk,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "users" 不存在
+LINE 1: INSERT INTO "users" ("first_name", "last_name", "gender", "e...
+                    ^
+
+10/Nov/2022 17:05:43 [Thread-2:15036] [django.request:222] [ERROR]- Internal Server Error: /admin/users/users/add/
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "users" 不存在
+LINE 1: INSERT INTO "users" ("first_name", "last_name", "gender", "e...
+                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 604, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1637, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1525, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1564, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1091, in save_model
+    obj.save()
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\apiview\model.py", line 231, in save
+    super(BaseModel, self).save(force_insert=force_insert,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 717, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 868, in _do_insert
+    return manager._insert([self], fields=fields, return_id=update_pk,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "users" 不存在
+LINE 1: INSERT INTO "users" ("first_name", "last_name", "gender", "e...
+                    ^
+
+10/Nov/2022 17:12:06 [Thread-2:18540] [django.request:222] [ERROR]- Internal Server Error: /admin/users/users/add/
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "users" 不存在
+LINE 1: INSERT INTO "users" ("first_name", "last_name", "gender", "e...
+                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 604, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1637, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1525, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1564, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1091, in save_model
+    obj.save()
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\apiview\model.py", line 231, in save
+    super(BaseModel, self).save(force_insert=force_insert,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 717, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 868, in _do_insert
+    return manager._insert([self], fields=fields, return_id=update_pk,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "users" 不存在
+LINE 1: INSERT INTO "users" ("first_name", "last_name", "gender", "e...
+                    ^
+
+10/Nov/2022 17:21:24 [Thread-2:10920] [django.request:222] [ERROR]- Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\sessions\backends\base.py", line 190, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "django_session" 不存在
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\sites.py", line 241, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\sites.py", line 212, in inner
+    if not self.has_permission(request):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\sites.py", line 186, in has_permission
+    return request.user.is_active and request.user.is_staff
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\functional.py", line 213, in inner
+    self._setup()
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\functional.py", line 347, in _setup
+    self._wrapped = self._setupfunc()
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\auth\middleware.py", line 24, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\auth\middleware.py", line 12, in get_user
+    request._cached_user = auth.get_user(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\auth\__init__.py", line 182, in get_user
+    user_id = _get_user_session_key(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\auth\__init__.py", line 59, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\sessions\backends\base.py", line 195, in _get_session
+    self._session_cache = self.load()
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\sessions\backends\db.py", line 43, in load
+    s = self._get_session_from_db()
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\sessions\backends\db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\query.py", line 393, in get
+    num = len(clone)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\query.py", line 250, in __len__
+    self._fetch_all()
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "django_session" 不存在
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+10/Nov/2022 17:28:59 [Thread-5:13960] [django.request:222] [ERROR]- Internal Server Error: /admin/users/users/add/
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "users" 不存在
+LINE 1: INSERT INTO "users" ("first_name", "last_name", "gender", "e...
+                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 604, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1637, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1525, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1564, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1091, in save_model
+    obj.save()
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\apiview\model.py", line 231, in save
+    super(BaseModel, self).save(force_insert=force_insert,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 717, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 868, in _do_insert
+    return manager._insert([self], fields=fields, return_id=update_pk,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "users" 不存在
+LINE 1: INSERT INTO "users" ("first_name", "last_name", "gender", "e...
+                    ^
+
+10/Nov/2022 17:31:47 [Thread-5:13960] [django.request:222] [ERROR]- Internal Server Error: /admin/users/users/add/
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "users" 不存在
+LINE 1: INSERT INTO "users" ("first_name", "last_name", "gender", "e...
+                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 604, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1637, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1525, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1564, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\contrib\admin\options.py", line 1091, in save_model
+    obj.save()
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\apiview\model.py", line 231, in save
+    super(BaseModel, self).save(force_insert=force_insert,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 717, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\base.py", line 868, in _do_insert
+    return manager._insert([self], fields=fields, return_id=update_pk,
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "users" 不存在
+LINE 1: INSERT INTO "users" ("first_name", "last_name", "gender", "e...
+                    ^
+
+11/Nov/2022 09:38:32 [Thread-19:17520] [django.request:222] [ERROR]- Internal Server Error: /userinfo
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\apps\users\views.py", line 18, in get_userinfo
+    user = Users.objects.get(id=1)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\query.py", line 397, in get
+    raise self.model.DoesNotExist(
+apps.users.models.Users.DoesNotExist: Users matching query does not exist.
+11/Nov/2022 09:39:39 [Thread-19:17520] [django.request:222] [ERROR]- Internal Server Error: /userinfo
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\apps\users\views.py", line 18, in get_userinfo
+    user = Users.objects.get(id=1)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\query.py", line 397, in get
+    raise self.model.DoesNotExist(
+apps.users.models.Users.DoesNotExist: Users matching query does not exist.
+11/Nov/2022 09:39:56 [Thread-19:17520] [django.request:222] [ERROR]- Internal Server Error: /userinfo
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\apps\users\views.py", line 18, in get_userinfo
+    user = Users.objects.get(id=1)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\query.py", line 397, in get
+    raise self.model.DoesNotExist(
+apps.users.models.Users.DoesNotExist: Users matching query does not exist.
+11/Nov/2022 09:44:49 [Thread-19:17520] [django.request:222] [ERROR]- Internal Server Error: /userinfo
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\apps\users\views.py", line 18, in get_userinfo
+    user = Users.objects.get(id=1)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\query.py", line 397, in get
+    raise self.model.DoesNotExist(
+apps.users.models.Users.DoesNotExist: Users matching query does not exist.
+11/Nov/2022 09:46:01 [Thread-19:17520] [django.request:222] [ERROR]- Internal Server Error: /userinfo
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\apps\users\views.py", line 18, in get_userinfo
+    user = Users.objects.get(id=1)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\query.py", line 397, in get
+    raise self.model.DoesNotExist(
+apps.users.models.Users.DoesNotExist: Users matching query does not exist.
+11/Nov/2022 09:46:26 [Thread-19:17520] [django.request:222] [ERROR]- Internal Server Error: /userinfo
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\apps\users\views.py", line 18, in get_userinfo
+    user = Users.objects.get(id=1)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\query.py", line 397, in get
+    raise self.model.DoesNotExist(
+apps.users.models.Users.DoesNotExist: Users matching query does not exist.
+11/Nov/2022 09:48:12 [Thread-19:17520] [django.request:222] [ERROR]- Internal Server Error: /userinfo
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\apps\users\views.py", line 18, in get_userinfo
+    user = Users.objects.get(id=1)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\query.py", line 397, in get
+    raise self.model.DoesNotExist(
+apps.users.models.Users.DoesNotExist: Users matching query does not exist.
+11/Nov/2022 09:52:12 [Thread-19:17520] [django.request:222] [ERROR]- Internal Server Error: /userinfo
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\apps\users\views.py", line 18, in get_userinfo
+    user = Users.objects.get(id=1)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\query.py", line 397, in get
+    raise self.model.DoesNotExist(
+apps.users.models.Users.DoesNotExist: Users matching query does not exist.
+11/Nov/2022 09:53:53 [Thread-19:17520] [django.request:222] [ERROR]- Internal Server Error: /userinfo
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\apps\users\views.py", line 18, in get_userinfo
+    user = Users.objects.get(id=1)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\query.py", line 397, in get
+    raise self.model.DoesNotExist(
+apps.users.models.Users.DoesNotExist: Users matching query does not exist.
+11/Nov/2022 09:53:55 [Thread-19:17520] [django.request:222] [ERROR]- Internal Server Error: /userinfo
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\apps\users\views.py", line 18, in get_userinfo
+    user = Users.objects.get(id=1)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\db\models\query.py", line 397, in get
+    raise self.model.DoesNotExist(
+apps.users.models.Users.DoesNotExist: Users matching query does not exist.
+11/Nov/2022 09:55:57 [Thread-19:17520] [django.request:222] [ERROR]- Internal Server Error: /api/users/register
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\apps\users\views.py", line 32, in post
+    user_data = json.loads(request.body)
+  File "C:\Users\silk\AppData\Local\Programs\Python\Python39\lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\silk\AppData\Local\Programs\Python\Python39\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\silk\AppData\Local\Programs\Python\Python39\lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+11/Nov/2022 10:45:35 [Thread-4:20844] [django.request:222] [ERROR]- Internal Server Error: /api/goods/get-goods
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\apps\goods\views.py", line 19, in get
+    if cache.get('goods_data'):
+AttributeError: module 'django.core.cache' has no attribute 'get'
+11/Nov/2022 10:46:06 [Thread-4:20844] [django.request:222] [ERROR]- Internal Server Error: /api/goods/get-goods
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\apps\goods\views.py", line 19, in get
+    if cache.get('goods_data'):
+AttributeError: module 'django.core.cache' has no attribute 'get'
+11/Nov/2022 10:46:50 [Thread-4:20844] [django.request:222] [ERROR]- Internal Server Error: /api/goods/get-goods
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\apps\goods\views.py", line 19, in get
+    if cache.get('goods_data'):
+AttributeError: module 'django.core.cache' has no attribute 'get'
+11/Nov/2022 10:53:36 [Thread-4:20844] [django.request:222] [ERROR]- Internal Server Error: /api/goods/get-goods
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\apps\goods\views.py", line 19, in get
+    if cache.get('goods_data'):
+AttributeError: module 'django.core.cache' has no attribute 'get'
+11/Nov/2022 10:56:08 [Thread-2:20664] [django.request:222] [ERROR]- Internal Server Error: /api/goods/get-goods
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\apps\goods\views.py", line 19, in get
+    if cache.get('goods_data'):
+AttributeError: module 'django.core.cache' has no attribute 'get'
+11/Nov/2022 10:56:45 [Thread-2:20664] [django.request:222] [ERROR]- Internal Server Error: /api/goods/get-goods
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\apps\goods\views.py", line 19, in get
+    if cache.get('goods_data'):
+AttributeError: module 'django.core.cache' has no attribute 'get'
+11/Nov/2022 12:05:25 [Thread-8:22440] [django.request:222] [ERROR]- Internal Server Error: /api/carts/edit-carts
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\apps\carts\views.py", line 55, in post
+    if data['numbers']==CartsGoods.objects.filter(user=user,good=good).first().num:
+AttributeError: 'NoneType' object has no attribute 'num'
+11/Nov/2022 12:05:32 [Thread-8:22440] [django.request:222] [ERROR]- Internal Server Error: /api/carts/edit-carts
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\apps\carts\views.py", line 55, in post
+    if data['numbers']==CartsGoods.objects.filter(user=user,good=good).first().num:
+AttributeError: 'NoneType' object has no attribute 'num'
+11/Nov/2022 12:05:50 [Thread-8:22440] [django.request:222] [ERROR]- Internal Server Error: /api/carts/edit-carts
+Traceback (most recent call last):
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\venv\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\silk\PycharmProjects\BIGBIG 2\apps\carts\views.py", line 55, in post
+    if data['numbers']==CartsGoods.objects.filter(user=user,good=good).first().num:
+AttributeError: 'NoneType' object has no attribute 'num'
